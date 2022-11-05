@@ -1,0 +1,79 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "fullName": "Dion Stoade",
+        "email": "dstoade0@cornell.edu",
+        "isStaff": true
+      },
+      {
+        "id": 2,
+        "fullName": "Windy Thorneloe",
+        "email": "wthorneloe1@usa.gov",
+        "isStaff": false
+      },
+      {
+        "id": 3,
+        "fullName": "Judy Jones",
+        "email": "judyjones@data.org",
+        "isStaff": false
+      },
+      {
+        "id": 4,
+        "name": "Helene Passfield",
+        "email": "hpassfield7@netvibes.com",
+        "isStaff": true
+      }
+    ],
+    "likes": [
+        {
+          "id": 1,
+          "userId": 2,
+          "eventId": 1
+        },
+        {
+            "id": 2,
+            "userId": 3,
+            "eventId": 2
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "comment": "I love this band!",
+            "userId": 3,
+            "eventId": 1
+        }
+    ],
+      "events": [
+        {
+            "id": 1,
+            "eventName": "DayGlow",
+            "date": "2022-11-08",
+            "time": "19:30",
+            "price": 39.50,
+            "eventTypeId": 1,
+            "imageURL": "https://ryman.com/wp-content/uploads/sites/9/2022/06/Dayglow_1200x630_NoText.jpg?resize=850,446"
+        },
+        {
+            "id": 2,
+            "eventName": "Self-Guided Tour",
+            "date": "2022-12-01",
+            "time": "09:00",
+            "price": 30.00,
+            "eventTypeId": 2,
+            "imageURL": "https://images.discovery-prod.axs.com/2022/11/uploadedimage_6362c7e17350a.jpg"
+        }
+    ],
+    "eventType": [
+        {
+            "id": 1,
+            "name": "show"
+        },
+        {
+            "id": 2,
+            "name": "tour"
+        }
+    ]
+}
+
