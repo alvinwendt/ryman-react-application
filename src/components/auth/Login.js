@@ -19,7 +19,7 @@ export const Login = () => {
             "project_user",
             JSON.stringify({
               id: user.id,
-              staff: user.staff,
+              staff: user.isStaff,
             })
           );
 
