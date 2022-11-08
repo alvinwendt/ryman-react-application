@@ -48,7 +48,7 @@
       "events": [
         {
             "id": 1,
-            "eventName": "DayGlow",
+            "eventName": "Dayglow",
             "date": "2022-11-08",
             "time": "19:30",
             "price": 39.50,
@@ -65,7 +65,7 @@
             "imageURL": "https://images.discovery-prod.axs.com/2022/11/uploadedimage_6362c7e17350a.jpg"
         }
     ],
-    "eventType": [
+    "eventTypes": [
         {
             "id": 1,
             "name": "show"

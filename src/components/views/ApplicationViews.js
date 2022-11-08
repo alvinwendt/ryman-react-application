@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Events } from "../events/Events";
+import { EventList } from "../events/EventList";
 
 export const ApplicationViews = () => {
   const localRymanUser = localStorage.getItem("ryman_user");
@@ -9,7 +9,7 @@ export const ApplicationViews = () => {
     <Routes>
       <Route path="/" element={
         <>
-          <Events />
+          <EventList />
         </>
       }></Route>
     </Routes>
