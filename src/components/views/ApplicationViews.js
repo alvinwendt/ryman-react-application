@@ -1,8 +1,8 @@
 export const ApplicationViews = () => {
-  const localProjectUser = localStorage.getItem("project_user");
-  const projectUserObject = JSON.parse(localProjectUser);
+  const localRymanUser = localStorage.getItem("ryman_user");
+  const rymanUserObject = JSON.parse(localRymanUser);
 
-  if (projectUserObject.staff) {
+  if (rymanUserObject.staff) {
     return "<h1>Staff Views</h1>";
   } else {
     return "<h1>Patron Views</h1>";
