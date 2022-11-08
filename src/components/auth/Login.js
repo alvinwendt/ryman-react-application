@@ -16,7 +16,7 @@ export const Login = () => {
         if (foundUsers.length === 1) {
           const user = foundUsers[0];
           localStorage.setItem(
-            "project_user",
+            "ryman_user",
             JSON.stringify({
               id: user.id,
               staff: user.isStaff,
@@ -34,7 +34,7 @@ export const Login = () => {
     <main className="container--login">
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Project Name</h1>
+          <h1>Welcome to the Ryman!</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>
