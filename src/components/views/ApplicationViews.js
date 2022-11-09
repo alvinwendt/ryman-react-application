@@ -11,7 +11,9 @@ export const ApplicationViews = () => {
         <>
           <EventList />
         </>
-      }></Route>
+      }>
+      <Route path="events/create" element={<EventsForm />} />
+      </Route>
     </Routes>
   )
 };
