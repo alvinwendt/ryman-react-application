@@ -43,6 +43,12 @@
       "comment": "I love this band!",
       "userId": 3,
       "eventId": 1
+    },
+    {
+      "comment": "I think the band Dayglow is awesome! I met them on a road trip out west a few years ago, and they were some of the most personable celebrities I have ever met. Very down to earth and approachable.",
+      "userId": 2,
+      "eventId": 1,
+      "id": 2
     }
   ],
   "events": [
