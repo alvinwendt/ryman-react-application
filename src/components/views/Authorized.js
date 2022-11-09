@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 export const Authorized = ({ children }) => {
   const location = useLocation();
 
-  if (localStorage.getItem("project_user")) {
+  if (localStorage.getItem("ryman_user")) {
     return children;
   } else {
     return (
