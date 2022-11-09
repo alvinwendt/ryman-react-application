@@ -17,9 +17,4 @@ export const ApplicationViews = () => {
       </Route>
     </Routes>
   )
-  if (rymanUserObject.staff) {
-    return < CommentsForm />
-  } else {
-    return "<h1>Patron Views</h1>";
-  }
 };
