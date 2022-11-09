@@ -1,4 +1,3 @@
-import { CommentsForm } from "../comments/CommentsForm";
 import { Route, Routes } from "react-router-dom";
 import { EventList } from "../events/EventList";
 
