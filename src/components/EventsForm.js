@@ -47,7 +47,7 @@ export const EventsForm = () => {
     })
       .then((response) => response.json())
       .then(() => {
-        navigate('/events');
+        navigate('/');
       });
   };
   return (
