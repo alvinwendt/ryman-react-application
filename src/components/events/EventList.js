@@ -31,6 +31,7 @@ export const EventList = () => {
                                 eventImage={event.imageURL}
                                 eventDate={event.date}
                                 eventTime={event.time}
+                                eventId={event.id}
                             />
                         )
                     })

@@ -1,10 +1,9 @@
-import { CommentsForm } from "../comments/CommentsForm";
 import { Route, Routes } from "react-router-dom";
+import { CommentsList } from "../comments/CommentsList";
 import { EventList } from "../events/EventList";
+import { EventsForm } from "../EventsForm";
 
 export const ApplicationViews = () => {
-  const localRymanUser = localStorage.getItem("ryman_user");
-  const rymanUserObject = JSON.parse(localRymanUser);
 
   return (
     <Routes>
@@ -13,13 +12,9 @@ export const ApplicationViews = () => {
           <EventList />
         </>
       }>
-      <Route path="events/create" element={<EventsForm />} />
+        <Route path="events/create" element={<EventsForm />} />
+        <Route path="events/:eventId" element={<CommentsList />} />
       </Route>
     </Routes>
   )
-  if (rymanUserObject.staff) {
-    return < CommentsForm />
-  } else {
-    return "<h1>Patron Views</h1>";
-  }
 };

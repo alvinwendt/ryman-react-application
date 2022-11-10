@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import "./Comments.css"
 
 export const CommentsForm = () => {
+    const [comments, setComments] = useState([])
 
     const navigate = useNavigate()
-
-    const [comments, setComments] = useState([])
 
     useEffect(
         () => {
