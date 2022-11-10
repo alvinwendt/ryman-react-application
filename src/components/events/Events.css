@@ -1,6 +1,41 @@
-.events {
+body {
+    background-color: white;
+}
+
+.eventsContainer {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.event {
+    margin: 100px;
+}
+
+.eventDetails {
+    width: 40%;
+    float: left;
+    background-color: white;
+    height: 200px;
+    padding: 10px;
+}
+
+.moreInfo {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    letter-spacing: .07em;
+    text-decoration: none;
+    border: none;
+}
+
+.eventImage {
+    float: left;
+    width: 50%;
+}
+
+img {
+    width: 370px;
+    height: 220px;
 }
 
 .eventName {
