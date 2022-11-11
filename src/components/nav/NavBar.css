@@ -1,7 +1,8 @@
-.navbar {
+/* .navbar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+
 }
 
 .navbar__item {
@@ -11,4 +12,37 @@
 
 .navbar__logout {
     margin-left: auto;
+} */
+
+header img {
+    display: block;
+    height: 80px;
+    margin: auto;
+}
+
+
+header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+    color: white;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
 }

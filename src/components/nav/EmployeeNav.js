@@ -5,13 +5,21 @@ export const EmployeeNav = () => {
     const navigate = useNavigate()
 
     return (
-        <ul className="navbar">
-            <li className="navbar__item navbar__logout">
-                <Link className="navbar__link" to="" onClick={() => {
+        <header>
+        <img src="https://store.ryman.com/media/wysiwyg/ryman-discover-more-ryman-site.jpg"></img>
+        <nav>
+            <ul>
+        
+                <li className="navLink left">Home</li>
+                <li className="navLink left">Liked</li>
+                <li className="navLink logout">
+                    <Link to="" onClick={() => {
                     localStorage.removeItem("ryman_user")
                     navigate("/", {replace: true})
                 }}>Logout</Link>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </nav>
+        </header>
     )
 }

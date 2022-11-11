@@ -5,6 +5,7 @@ body {
 .eventsContainer {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 
 .event {
@@ -26,7 +27,11 @@ body {
     letter-spacing: .07em;
     text-decoration: none;
     border: none;
+    opacity: 0.6;
+    transition: 0.3s;
 }
+
+.moreInfo:hover {opacity: 1}
 
 .eventImage {
     float: left;
@@ -58,3 +63,4 @@ img {
     margin: 0 0 7px 0;
     line-height: 110%;
 }
+
