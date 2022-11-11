@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { EventList } from "../events/EventList";
+import { EventsForm } from "../EventsForm";
 
 export const ApplicationViews = () => {
   const localRymanUser = localStorage.getItem("ryman_user");
@@ -11,9 +12,8 @@ export const ApplicationViews = () => {
         <>
           <EventList />
         </>
-      }>
+      }></Route>
       <Route path="events/create" element={<EventsForm />} />
-      </Route>
     </Routes>
   )
 };

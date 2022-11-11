@@ -11,7 +11,7 @@ export const EmployeeNav = () => {
             <ul>
         
                 <li className="navLink left">Home</li>
-                <li className="navLink left">Liked</li>
+                <Link className="navLink left" to="/events/create">Create Event</Link>
                 <li className="navLink logout">
                     <Link to="" onClick={() => {
                     localStorage.removeItem("ryman_user")

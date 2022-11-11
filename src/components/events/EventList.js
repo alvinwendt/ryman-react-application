@@ -29,8 +29,7 @@ export const EventList = () => {
                                 eventType={event.eventType.name}
                                 eventName={event.eventName}
                                 eventImage={event.imageURL}
-                                eventDate={event.date}
-                                eventTime={event.time}
+                                eventDateTime={event.dateTime}
                             />
                         )
                     })
