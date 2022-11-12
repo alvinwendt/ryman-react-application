@@ -43,6 +43,36 @@
       "comment": "I love this band!",
       "userId": 3,
       "eventId": 1
+    },
+    {
+      "comment": "Dayglow is awesome! I met him on a road trip out west and he was so nice.",
+      "userId": 2,
+      "eventId": 1,
+      "id": 2
+    },
+    {
+      "comment": "This tour was so cool! I learned so much about some of my favorite artists!",
+      "userId": 2,
+      "eventId": 2,
+      "id": 3
+    },
+    {
+      "comment": "This is my comment.",
+      "userId": 1,
+      "eventId": 1,
+      "id": 4
+    },
+    {
+      "comment": "New comment",
+      "userId": 2,
+      "eventId": "2",
+      "id": 5
+    },
+    {
+      "comment": "Wil it show?",
+      "userId": 2,
+      "eventId": "2",
+      "id": 6
     }
   ],
   "events": [
@@ -63,73 +93,6 @@
       "price": 30,
       "eventTypeId": 2,
       "imageURL": "https://images.discovery-prod.axs.com/2022/11/uploadedimage_6362c7e17350a.jpg"
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "eventName": "event",
-      "date": "2022-11-25",
-      "time": "19:30",
-      "price": "75",
-      "imageURL": "",
-      "id": 5
-    },
-    {
-      "eventName": "",
-      "date": "",
-      "time": "",
-      "price": 0,
-      "imageURL": "",
-      "id": 6
-    },
-    {
-      "eventName": "event two",
-      "date": "2022-11-25",
-      "time": "20:37",
-      "price": "75",
-      "eventTypeId": "",
-      "imageURL": "",
-      "id": 7
-    },
-    {
-      "eventName": "event three",
-      "date": "2022-11-25",
-      "time": "21:45",
-      "price": "100",
-      "eventTypeId": "2",
-      "imageURL": "",
-      "id": 8
-    },
-    {
-      "eventName": "Event 4",
-      "date": "2022-11-25",
-      "time": "21:45",
-      "price": "100",
-      "eventTypeId": 2,
-      "imageURL": "",
-      "id": 9
-    },
-    {
-      "eventName": "Event 5",
-      "date": "2022-11-25",
-      "time": "21:50",
-      "price": 100,
-      "eventTypeId": 2,
-      "imageURL": "",
-      "id": 10
-    },
-    {
-      "eventName": "",
-      "date": "",
-      "time": "",
-      "price": 100.55,
-      "eventTypeId": 0,
-      "imageURL": "",
-      "id": 11
     }
   ],
   "eventTypes": [

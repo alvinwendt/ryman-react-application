@@ -1,3 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
+import { EventDetails } from '../events/EventDetails';
+import { EventList } from '../events/EventList';
+import { EventsForm } from '../EventsForm';
 import { CustomerViews } from './CustomerViews';
 import { EmployeeViews } from './EmployeeViews';
 
@@ -16,6 +20,20 @@ export const ApplicationViews = () => {
     //Return customer views
     return <CustomerViews />;
   }
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <EventList />
+          </>
+        }
+      ></Route>
+      <Route path="events/create" element={<EventsForm />} />
+      <Route path="events/:eventId" element={<EventDetails />} />
+    </Routes>
+  );
 };
 
 //   return (

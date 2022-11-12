@@ -109,9 +109,8 @@ export const EventsForm = () => {
             }}
           />
         </div>
-      </fieldset> */}
-
-      {/* <fieldset>
+      </fieldset>
+      <fieldset>
         <div className="form-group">
           <label htmlFor="time">Time:</label>
           <input
