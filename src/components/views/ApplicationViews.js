@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { CommentsList } from "../comments/CommentsList";
+import { EventDetails } from "../events/EventDetails";
 import { EventList } from "../events/EventList";
 import { EventsForm } from "../EventsForm";
 
@@ -11,10 +11,10 @@ export const ApplicationViews = () => {
         <>
           <EventList />
         </>
-      }>
+      }></Route>
         <Route path="events/create" element={<EventsForm />} />
-        <Route path="events/:eventId" element={<CommentsList />} />
-      </Route>
+        <Route path="events/:eventId" element={<EventDetails />} />
+      
     </Routes>
   )
 };
