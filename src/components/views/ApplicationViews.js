@@ -1,16 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
-import { EventDetails } from '../events/EventDetails';
-import { EventList } from '../events/EventList';
-import { EventsForm } from '../EventsForm';
-import { CustomerViews } from './CustomerViews';
-import { EmployeeViews } from './EmployeeViews';
+import { Route, Routes } from "react-router-dom";
+import { EventDetails } from "../events/EventDetails";
+import { EventList } from "../events/EventList";
+import { EventsForm } from "../EventsForm";
+import { CustomerViews } from "./CustomerViews";
+import { EmployeeViews } from "./EmployeeViews";
 
 // import { Route, Routes } from 'react-router-dom';
 // import { EventList } from '../events/EventList';
 // import { EventsForm } from '../EventsForm';
 
 export const ApplicationViews = () => {
-  const localRymanUser = localStorage.getItem('ryman_user');
+  const localRymanUser = localStorage.getItem("ryman_user");
   const rymanUserObject = JSON.parse(localRymanUser);
 
   if (rymanUserObject.staff) {
@@ -32,6 +32,8 @@ export const ApplicationViews = () => {
       ></Route>
       <Route path="events/create" element={<EventsForm />} />
       <Route path="events/:eventId" element={<EventDetails />} />
+      <Route path="likedevents" element={<LikedItems />} />
+      LikedItems
     </Routes>
   );
 };
