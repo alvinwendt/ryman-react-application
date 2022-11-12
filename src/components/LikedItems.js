@@ -6,8 +6,8 @@ export const LikedItems = () => {
   const rymanUser = localStorage.getItem("ryman_user");
   const rymanUserObject = JSON.parse(rymanUser);
 
-  // TODO Create Use State for Liked events list
-  const [likedEvents, setLikedEvents] = useState([]);
+  // // TODO Create Use State for Liked events list
+  // const [likedEvents, setLikedEvents] = useState([]);
 
   // // TODO Create Use State
   // const [likedItems, setLikedItems] = useState({

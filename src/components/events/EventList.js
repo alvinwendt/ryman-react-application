@@ -16,26 +16,6 @@ export const EventList = () => {
     fetchData();
   }, []);
 
-  // Liked Experimentation Section-----------------------
-
-  // TODO Create Use State
-  const [likedItems, setLikedItems] = useState([]);
-
-  //   //TODO pull in user information
-  //   const localRymanUser = localStorage.getItem("ryman_user");
-  //   const rymanUserObject = JSON.parse(localRymanUser);
-
-  useEffect(() => {
-    const pullLikes = async () => {
-      const response = await fetch("http://localhost:8088/likes");
-      let data = await response.json();
-      setLikedItems(data);
-    };
-    pullLikes();
-  }, []);
-
-  // Liked Experimentation Section-----------------------
-
   return (
     <div className="eventsContainer">
       <article className="events">
