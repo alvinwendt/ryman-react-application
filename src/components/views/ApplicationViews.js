@@ -1,19 +1,34 @@
-import { Route, Routes } from "react-router-dom";
-import { EventList } from "../events/EventList";
+import { CustomerViews } from './CustomerViews';
+import { EmployeeViews } from './EmployeeViews';
+
+// import { Route, Routes } from 'react-router-dom';
+// import { EventList } from '../events/EventList';
+// import { EventsForm } from '../EventsForm';
 
 export const ApplicationViews = () => {
-  const localRymanUser = localStorage.getItem("ryman_user");
+  const localRymanUser = localStorage.getItem('ryman_user');
   const rymanUserObject = JSON.parse(localRymanUser);
 
-  return (
-    <Routes>
-      <Route path="/" element={
-        <>
-          <EventList />
-        </>
-      }>
-      <Route path="events/create" element={<EventsForm />} />
-      </Route>
-    </Routes>
-  )
+  if (rymanUserObject.staff) {
+    // Return employee views
+    return <EmployeeViews />;
+  } else {
+    //Return customer views
+    return <CustomerViews />;
+  }
 };
+
+//   return (
+//     <Routes>
+//       <Route
+//         path="/"
+//         element={
+//           <>
+//             <EventList />
+//           </>
+//         }
+//       >
+//         <Route path="events/create" element={<EventsForm />} />
+//       </Route>
+//     </Routes>
+//   );
