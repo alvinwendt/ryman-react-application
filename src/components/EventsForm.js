@@ -6,7 +6,6 @@ export const EventsForm = () => {
     eventName: '',
     date: '',
     time: '',
-    dateTime: '',
     price: 0.0,
     eventType: 0,
     imageURL: '',
@@ -34,7 +33,6 @@ export const EventsForm = () => {
       eventName: rymanEvent.eventName,
       date: rymanEvent.date,
       time: rymanEvent.time,
-      dateTime: rymanEvent.dateTime,
       price: rymanEvent.price,
       eventTypeId: rymanEvent.eventType,
       imageURL: rymanEvent.imageURL,
@@ -91,27 +89,6 @@ export const EventsForm = () => {
           />
         </div>
       </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="time">Time:</label>
-          <input
-            type="time"
-            required
-            autoFocus
-            //type="text"
-            className="form-control"
-            //placeholder="Time"
-            value={rymanEvent.time}
-            onChange={(event) => {
-              const copy = { ...rymanEvent };
-              copy.time = event.target.value;
-              update(copy);
-            }}
-          />
-        </div>
-      </fieldset>
-
       <fieldset>
         <div className="form-group">
           <label htmlFor="time">Date & Time:</label>
