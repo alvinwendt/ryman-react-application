@@ -52,7 +52,7 @@ img {
     font-weight: 400;
     text-transform: uppercase;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 10px;
     line-height: 110%;
 }
 
@@ -63,12 +63,66 @@ img {
     font-weight: 500;
     display: block;
     padding: 0;
-    margin: 0 0 7px 0;
+    margin: 0 0 7px 10px;
     line-height: 110%;
 }
 
-.eventDateTime {
-    font-size: 11px;
-    margin-bottom: 30px;
+.commentsSection {
+    background: rgb(192, 191, 191);
+    margin: 0 10px;
 }
 
+h2 {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 10px 0 0 10px;
+    line-height: 110%;
+}
+
+.comment {
+    background:whitesmoke;
+    border: solid black 2px;
+    padding: 5px;
+    margin: 0 20px 10px 20px;
+}
+
+.newCommentsHeading {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 10px;
+    line-height: 110%;
+}
+
+.userName {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0;
+    margin: 5px 0 0 0;
+    line-height: 110%;
+}
+
+.form-control {
+    max-width: 50%;
+    max-height: 266px;
+    padding: 5px;
+    margin: 0 20px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    margin: 0 0 10px 20px;
+    background-color: black;
+    color: white;
+    letter-spacing: .07em;
+    text-decoration: none;
+    border: none;
+    opacity: 0.6;
+    transition: 0.3s;
+}
