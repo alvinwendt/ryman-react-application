@@ -89,7 +89,6 @@ export const EventsForm = () => {
           />
         </div>
       </fieldset>
-
       <fieldset>
         <div className="form-group">
           <label htmlFor="time">Time:</label>

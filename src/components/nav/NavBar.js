@@ -5,7 +5,7 @@ export const NavBar = () => {
     const rymanUser = localStorage.getItem("ryman_user")
     const rymanUserObject = JSON.parse(rymanUser)
 
-    if (rymanUserObject.isStaff) {
+    if (rymanUserObject.staff) {
         return <EmployeeNav />
     }
     else {
