@@ -4,6 +4,7 @@ import { ApplicationViews } from "./views/ApplicationViews"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { NavBar } from "./nav/NavBar"
+import "./Ryman.css"
 
 
 export const Ryman = () => {

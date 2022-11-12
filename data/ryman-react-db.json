@@ -43,6 +43,36 @@
       "comment": "I love this band!",
       "userId": 3,
       "eventId": 1
+    },
+    {
+      "comment": "Dayglow is awesome! I met him on a road trip out west and he was so nice.",
+      "userId": 2,
+      "eventId": 1,
+      "id": 2
+    },
+    {
+      "comment": "This tour was so cool! I learned so much about some of my favorite artists!",
+      "userId": 2,
+      "eventId": 2,
+      "id": 3
+    },
+    {
+      "comment": "This is my comment.",
+      "userId": 1,
+      "eventId": 1,
+      "id": 4
+    },
+    {
+      "comment": "New comment",
+      "userId": 2,
+      "eventId": "2",
+      "id": 5
+    },
+    {
+      "comment": "Wil it show?",
+      "userId": 2,
+      "eventId": "2",
+      "id": 6
     }
   ],
   "events": [

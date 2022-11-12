@@ -37,7 +37,7 @@ export const EventList = () => {
   // Liked Experimentation Section-----------------------
 
   return (
-    <>
+    <div className="eventsContainer">
       <article className="events">
         {events.map((event) => {
           return (
@@ -46,22 +46,11 @@ export const EventList = () => {
               eventType={event.eventType.name}
               eventName={event.eventName}
               eventImage={event.imageURL}
-              eventDate={event.date}
-              eventTime={event.time}
+              eventDateTime={event.dateTime}
             />
           );
         })}
       </article>
-      {/* <article>
-        {likedItems.map((item) => {
-          return (
-            <section className="event">
-              <p className="eventType">{item.eventId}</p>
-              <h3 className="eventName">{item.id}</h3>
-            </section>
-          );
-        })}
-      </article> */}
-    </>
+    </div>
   );
 };

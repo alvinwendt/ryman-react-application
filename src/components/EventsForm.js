@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './EventsForm.css';
 
 export const EventsForm = () => {
   const [rymanEvent, update] = useState({
@@ -52,7 +53,7 @@ export const EventsForm = () => {
   };
   return (
     <form className="eventsForm">
-      <h2 className="eventsForm__title">Events</h2>
+      <h2 className="eventsForm__title">Create New Event</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="eventsName">Event Name:</label>
@@ -74,6 +75,26 @@ export const EventsForm = () => {
 
       <fieldset>
         <div className="form-group">
+          <label htmlFor="time">Date & Time:</label>
+          <input
+            type="datetime-local"
+            required
+            autoFocus
+            //type="text"
+            className="form-control"
+            //placeholder="Time"
+            value={rymanEvent.dateTime}
+            onChange={(event) => {
+              const copy = { ...rymanEvent };
+              copy.dateTime = event.target.value;
+              update(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+
+      {/* <fieldset>
+        <div className="form-group">
           <label htmlFor="type">Date:</label>
           <input
             type="date"
@@ -89,7 +110,6 @@ export const EventsForm = () => {
           />
         </div>
       </fieldset>
-
       <fieldset>
         <div className="form-group">
           <label htmlFor="time">Time:</label>
@@ -108,7 +128,7 @@ export const EventsForm = () => {
             }}
           />
         </div>
-      </fieldset>
+      </fieldset> */}
 
       <fieldset>
         <div className="form-group">
