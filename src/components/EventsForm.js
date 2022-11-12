@@ -91,18 +91,18 @@ export const EventsForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="time">Date & Time:</label>
+          <label htmlFor="time">Time:</label>
           <input
-            type="datetime-local"
+            type="time"
             required
             autoFocus
             //type="text"
             className="form-control"
             //placeholder="Time"
-            value={rymanEvent.dateTime}
+            value={rymanEvent.time}
             onChange={(event) => {
               const copy = { ...rymanEvent };
-              copy.dateTime = event.target.value;
+              copy.time = event.target.value;
               update(copy);
             }}
           />
