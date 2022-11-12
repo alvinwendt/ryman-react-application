@@ -14,11 +14,15 @@
     margin-left: auto;
 } */
 
-header img {
+.rymanNavLogo {
     display: block;
     height: 80px;
     margin: auto;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
 }
+
 
 
 header {
@@ -27,7 +31,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 90px;
     display: flex;
     align-items: center;
     box-shadow: 0 0 25px 0 black;

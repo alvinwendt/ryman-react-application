@@ -51,10 +51,8 @@ export const Login = () => {
           <fieldset>
             <button type="submit">Sign in</button>
           </fieldset>
+          <Link to="/register">Not a member yet?</Link>
         </form>
-      </section>
-      <section className="link--register">
-        <Link to="/register">Not a member yet?</Link>
       </section>
     </main>
   );

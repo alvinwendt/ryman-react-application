@@ -6,13 +6,13 @@ export const EmployeeNav = () => {
 
     return (
         <header>
-        <img src="https://store.ryman.com/media/wysiwyg/ryman-discover-more-ryman-site.jpg"></img>
+        <Link className="rymanNavLogo" to="/"><img src="https://ryman.com/wp-content/themes/ryman/images/ryman-130-logo-mbl.gif?quality=90&h=600" className="rymanNavLogo"></img></Link>
         <nav>
             <ul>
-        
-                <li className="navLink left">Home</li>
-                <Link className="navLink left" to="/events/create">Create Event</Link>
-                <li className="navLink logout">
+                <li><Link to="/" className="navLink left">Events</Link></li>
+                <li className="navLink">Liked</li>
+                <li><Link className="navLink left" to="/events/create">Create Event</Link></li>
+                <li className="logout">
                     <Link to="" onClick={() => {
                     localStorage.removeItem("ryman_user")
                     navigate("/", {replace: true})
