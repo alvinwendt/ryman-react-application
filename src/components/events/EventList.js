@@ -19,7 +19,7 @@ export const EventList = () => {
     )
 
     return (
-        <>
+        <div className="eventsContainer">
             <article className="events">
                 {
                     events.map((event) => {
@@ -29,13 +29,12 @@ export const EventList = () => {
                                 eventType={event.eventType.name}
                                 eventName={event.eventName}
                                 eventImage={event.imageURL}
-                                eventDate={event.date}
-                                eventTime={event.time}
+                                eventDateTime={event.dateTime}
                             />
                         )
                     })
                 }
             </article>
-        </>
+        </div>
     )
 }

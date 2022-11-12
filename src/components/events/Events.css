@@ -1,11 +1,54 @@
+.eventsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.event {
+    margin: 20px;
+}
+
 .events {
     display: flex;
     flex-direction: column;
 }
 
+.eventDetails {
+    width: 40%;
+    float: left;
+    background-color: white;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.moreInfo {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    letter-spacing: .07em;
+    text-decoration: none;
+    border: none;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.moreInfo:hover {opacity: 1}
+
+.eventImage {
+    float: left;
+    width: 50%;
+}
+
+img {
+    width: 370px;
+    height: 220px;
+}
+
 .eventName {
     font-family: 'League Gothic', sans-serif;
-    font-size: 28.8px;
+    font-size: 35px;
     font-weight: 400;
     text-transform: uppercase;
     padding: 0;
@@ -23,3 +66,9 @@
     margin: 0 0 7px 0;
     line-height: 110%;
 }
+
+.eventDateTime {
+    font-size: 11px;
+    margin-bottom: 30px;
+}
+

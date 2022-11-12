@@ -43,6 +43,11 @@
   
   .container--login {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
   }
   
   .form--login {
@@ -50,9 +55,11 @@
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
+    background-color: white;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 30px;
   }
   
   .button--close {
