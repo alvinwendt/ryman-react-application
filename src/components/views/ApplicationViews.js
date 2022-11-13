@@ -1,20 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import { EventDetails } from "../events/EventDetails";
-import { EventList } from "../events/EventList";
-import { EventsForm } from "../EventsForm";
+import { CustomerViews } from "./CustomerViews";
+import { EmployeeViews } from "./EmployeeViews";
 
 export const ApplicationViews = () => {
 
-  return (
-    <Routes>
-      <Route path="/" element={
-        <>
-          <EventList />
-        </>
-      }></Route>
-        <Route path="events/create" element={<EventsForm />} />
-        <Route path="events/:eventId" element={<EventDetails />} />
-      
-    </Routes>
-  )
-};
+  const localRymanUser = localStorage.getItem("ryman_user");
+  const rymanUserObject = JSON.parse(localRymanUser);
+
+  if (rymanUserObject.staff) {
+    return <EmployeeViews />;
+  } else {
+    return <CustomerViews />;
+  }
+}
