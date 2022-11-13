@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
 export const CommentEdit = () => {
-    const [ticket, assignTicket] = useState({
-        description: "",
+    const [editedComment, updateComment] = useState({
+        comment: "",
         emergency: false
     })
-    const { ticketId } = useParams()
+    const { commentId } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
