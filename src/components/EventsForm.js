@@ -5,8 +5,7 @@ import './EventsForm.css';
 export const EventsForm = () => {
   const [rymanEvent, update] = useState({
     eventName: '',
-    date: '',
-    time: '',
+    dateTime: '',
     price: 0.0,
     eventType: 0,
     imageURL: '',
@@ -32,8 +31,7 @@ export const EventsForm = () => {
 
     const dataToSendToAPI = {
       eventName: rymanEvent.eventName,
-      date: rymanEvent.date,
-      time: rymanEvent.time,
+      dateTime: rymanEvent.dateTime,
       price: rymanEvent.price,
       eventTypeId: rymanEvent.eventType,
       imageURL: rymanEvent.imageURL,
@@ -54,7 +52,7 @@ export const EventsForm = () => {
   return (
     <form className="eventsForm">
       <h2 className="eventsForm__title">Create New Event</h2>
-      <fieldset>
+      <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="eventsName">Event Name:</label>
           <input
@@ -73,7 +71,7 @@ export const EventsForm = () => {
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="time">Date & Time:</label>
           <input
@@ -130,7 +128,7 @@ export const EventsForm = () => {
         </div>
       </fieldset> */}
 
-      <fieldset>
+      <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="price">Price:</label>
           <input
@@ -150,19 +148,19 @@ export const EventsForm = () => {
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="type">Event Type:</label>
           <select
-            autoFocus
             className="form-control"
-            value={rymanEvent.eventType}
+            defaultValue={rymanEvent.eventType}
             onChange={(event) => {
               const copy = { ...rymanEvent };
               copy.eventType = parseInt(event.target.value);
               update(copy);
             }}
           >
+            <option value="" disabled selected>-- Choose --</option>
             {eventTypes.map((type) => {
               return (
                 <option className="eventType" key={type.id} value={type.id}>
@@ -174,9 +172,9 @@ export const EventsForm = () => {
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset className="eventField">
         <div className="form-group">
-          <label htmlFor="type">URL:</label>
+          <label htmlFor="type">Image URL:</label>
           <input
             required
             autoFocus
@@ -193,7 +191,7 @@ export const EventsForm = () => {
 
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="btn btn-primary"
+        className="submitEvent"
       >
         Submit Event
       </button>

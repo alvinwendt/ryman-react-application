@@ -32,6 +32,13 @@
     border: none;
     opacity: 0.6;
     transition: 0.3s;
+    width: 150px;
+}
+
+.moreInfoLink {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .moreInfo:hover {opacity: 1}
@@ -52,7 +59,7 @@ img {
     font-weight: 400;
     text-transform: uppercase;
     padding: 0;
-    margin: 0 0 0 10px;
+    margin: 0;
     line-height: 110%;
 }
 
@@ -63,8 +70,13 @@ img {
     font-weight: 500;
     display: block;
     padding: 0;
-    margin: 0 0 7px 10px;
+    margin: 0 0 7px 0;
     line-height: 110%;
+}
+
+.eventDateTime {
+    font-size: 11px;
+    margin-bottom: 30px;
 }
 
 .commentsSection {
@@ -72,7 +84,7 @@ img {
     margin: 0 10px;
 }
 
-h2 {
+.commentTitle {
     font-family: 'League Gothic', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -108,7 +120,7 @@ h2 {
     line-height: 110%;
 }
 
-.form-control {
+.commentInput {
     max-width: 50%;
     max-height: 266px;
     padding: 5px;

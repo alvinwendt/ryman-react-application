@@ -23,6 +23,7 @@ export const EventList = () => {
           return (
             <Event
               key={`event--${event.id}`}
+              eventId={event.id}
               eventType={event.eventType.name}
               eventName={event.eventName}
               eventImage={event.imageURL}
