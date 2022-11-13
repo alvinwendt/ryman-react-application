@@ -1,10 +1,7 @@
-import { Outlet, Route, Routes } from 'react-router-dom';
-// import { Customer } from '../Customers/Customer';
-// import { CustomerDetails } from '../Customers/CustomerDetails';
-// import { CustomerList } from '../Customers/CustomerList';
-// import { EmployeeDetails } from '../employees/EmployeeDetails';
-// import { EmployeeList } from '../employees/EmployeeList';
-// import { TicketContainer } from '../tickets/TicketContainer';
+import { Route, Routes } from 'react-router-dom';
+import { EventDetails } from '../events/EventDetails';
+import { EventList } from '../events/EventList'
+import { EventsForm } from '../EventsForm';
 
 export const EmployeeViews = () => {
   return (
@@ -13,11 +10,12 @@ export const EmployeeViews = () => {
         path="/"
         element={
           <>
-            <div> </div>
-            <Outlet />
+            <EventList />
           </>
         }
       ></Route>
+    <Route path="events/create" element={<EventsForm />} />
+    <Route path="events/:eventId" element={<EventDetails />} />
     </Routes>
   );
 };

@@ -10,9 +10,10 @@
   border-radius: 2%;
   padding: 50px 20px;
   box-shadow: var(--card-shadow);
+  margin-top: 120px;
 }
 
-fieldset {
+.eventField {
   background-color: #f2f2f0;
   color: blaco;
   border: 1px solid black;
@@ -22,7 +23,7 @@ fieldset {
   margin: 20px;
   /* box-shadow: var(--card-shadow); */
 }
-button {
+.submitEvent {
   background-color: #f2f2f0;
   color: black;
   border: none;

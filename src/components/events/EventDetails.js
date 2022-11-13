@@ -79,7 +79,7 @@ export const EventDetails = () => {
             event.map(
               (event) => {
               return (
-                <article>
+                <article key={`event--${event.id}`}>
                   <p className="eventType">{event.eventType.name}</p>
                   <h3 className="eventName">{event.eventName}</h3>
                   <img src={event.imageURL}></img>
