@@ -20,7 +20,7 @@
     },
     {
       "id": 4,
-      "name": "Helene Passfield",
+      "fullName": "Helene Passfield",
       "email": "hpassfield7@netvibes.com",
       "isStaff": true
     }
@@ -57,30 +57,59 @@
       "id": 3
     },
     {
-      "comment": "This is my comment.",
+      "comment": "Moon Pies SUCK.",
       "userId": 1,
-      "eventId": 1,
+      "eventId": 2,
       "id": 4
     },
     {
-      "comment": "New comment",
-      "userId": 2,
-      "eventId": "2",
+      "comment": "Can't wait to see Dayglow again!",
+      "userId": 3,
+      "eventId": 1,
       "id": 5
     },
     {
-      "comment": "Wil it show?",
-      "userId": 2,
-      "eventId": "2",
+      "comment": "Wonderful way to spend a morning in Nashville!",
+      "userId": 3,
+      "eventId": 2,
       "id": 6
+    },
+    {
+      "comment": "This tour has something for everyone. Don't have to be a country music fan to enjoy it.",
+      "userId": 3,
+      "eventId": 2,
+      "id": 7
+    },
+    {
+      "comment": "So much fun!",
+      "userId": 3,
+      "eventId": 2,
+      "id": 8
+    },
+    {
+      "comment": "I love you Dolly!",
+      "userId": 1,
+      "eventId": 3,
+      "id": 9
+    },
+    {
+      "comment": "This tour is really great!",
+      "userId": 2,
+      "eventId": 2,
+      "id": 10
+    },
+    {
+      "comment": "This is such a good show! Get your tickets now!",
+      "userId": 4,
+      "eventId": 3,
+      "id": 11
     }
   ],
   "events": [
     {
       "id": 1,
       "eventName": "DayGlow",
-      "date": "2022-11-08",
-      "time": "19:30",
+      "dateTime": "2022-12-05T19:00",
       "price": 39.5,
       "eventTypeId": 1,
       "imageURL": "https://ryman.com/wp-content/uploads/sites/9/2022/06/Dayglow_1200x630_NoText.jpg?resize=850,446"
@@ -88,11 +117,18 @@
     {
       "id": 2,
       "eventName": "Self-Guided Tour",
-      "date": "2022-12-01",
-      "time": "09:00",
+      "dateTime": "2022-12-08T09:00",
       "price": 30,
       "eventTypeId": 2,
       "imageURL": "https://images.discovery-prod.axs.com/2022/11/uploadedimage_6362c7e17350a.jpg"
+    },
+    {
+      "eventName": "A Holly Dolly Christmas",
+      "dateTime": "2022-12-23T19:30",
+      "price": 45.75,
+      "eventTypeId": 1,
+      "imageURL": "https://dollyparton.com/dp-uploads/2021/11/AHDC-Deluxe-Feature.jpg",
+      "id": 3
     }
   ],
   "eventTypes": [
