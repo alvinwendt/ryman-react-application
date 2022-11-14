@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Event } from "../components/events/Event";
+import { Link } from "react-router-dom";
+import { formatInTimeZone } from "date-fns-tz";
+// import { Event } from "../components/events/Event";
 
 export const LikedItems = () => {
   // Pull in user information
@@ -15,8 +17,11 @@ export const LikedItems = () => {
   //   eventId: 0,
   // });
 
+  // // TODO Create Use State for eventIds
+  // const [eventTypes, setEventTypes] = useState({});
+
   // TODO Create Use State for eventIds
-  const [eventTypes, setEventTypes] = useState({});
+  const [likedEvents, setLikedEvents] = useState([]);
 
   //TODO API GET call liked events based on user
   const pullLikedEvents = async () => {
@@ -29,16 +34,16 @@ export const LikedItems = () => {
     setLikedEvents(filteredData);
   };
 
-  //TODO API GET call liked events based on user
-  const pullEventTypes = async () => {
-    const response = await fetch(`http://localhost:8088/eventTypes`);
-    let data = response.json();
-    setEventTypes(data);
-  };
+  // //TODO API GET call liked events based on user
+  // const pullEventTypes = async () => {
+  //   const response = await fetch(`http://localhost:8088/eventTypes`);
+  //   let data = response.json();
+  //   setEventTypes(data);
+  // };
 
   useEffect(() => {
     pullLikedEvents();
-    pullEventTypes();
+    // pullEventTypes();
   }, []);
 
   // //TODO API GET call to pull in liked items list for user
@@ -79,15 +84,69 @@ export const LikedItems = () => {
   // };
   // //TODO
 
+  const formatEventDateTime = (eventDateTime) => {
+    const convertDateTime = new Date(eventDateTime);
+
+    return formatInTimeZone(
+      convertDateTime,
+      "America/Chicago",
+      "LLLL d, yyyy 'at' h:mm a zzz"
+    );
+  };
+
+  const deleteButton = (eventId) => {
+    return (
+      <Link
+        className="material-symbols-outlined blackIcon"
+        onClick={() => {
+          const deleteEvent = async () => {
+            const options = {
+              method: "DELETE",
+            };
+            await fetch(`http://localhost:8088/likes/${eventId}`, options);
+            pullLikedEvents();
+          };
+          deleteEvent();
+        }}
+      >
+        delete
+      </Link>
+    );
+  };
+
   return (
-    <>
+    // {
+    //    if (likedEvents.length == 0) {return <h2>No Liked Events</h2>}
+    // else {
+    //   return (
+
+    <div className="eventsContainer">
       <article className="events">
-        {if (likedEvents.length = 0) {<h2>No Liked Events</h2>}
-        else {
-          
-        }
-      }
+        {likedEvents.map((event) => {
+          return (
+            <section className="event" key={`event--${event.id}`}>
+              <div className="eventDetails">
+                <div className="float-container">
+                  {/* <p className="eventType child">{event.event.eventTypeId}</p> */}
+                </div>
+                <h3 className="eventName">{event.event.eventName}</h3>
+                <div className="buttons child">
+                  {<>{deleteButton(event.id)}</>}
+                </div>
+                <p className="eventDateTime">
+                  {formatEventDateTime(event.event.dateTime)}
+                </p>
+                <Link to={`/events/${event.event.id}`} className="moreInfoLink">
+                  <button className="moreInfo">MORE INFO</button>
+                </Link>
+              </div>
+              <div className="eventImage">
+                <img src={event.event.imageURL}></img>
+              </div>
+            </section>
+          );
+        })}
       </article>
-    </>
+    </div>
   );
 };
