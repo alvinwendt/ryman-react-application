@@ -94,6 +94,26 @@ export const LikedItems = () => {
     );
   };
 
+  const deleteButton = (eventId) => {
+    return (
+      <Link
+        className="material-symbols-outlined blackIcon"
+        onClick={() => {
+          const deleteEvent = async () => {
+            const options = {
+              method: "DELETE",
+            };
+            await fetch(`http://localhost:8088/likes/${eventId}`, options);
+            pullLikedEvents();
+          };
+          deleteEvent();
+        }}
+      >
+        delete
+      </Link>
+    );
+  };
+
   return (
     // {
     //    if (likedEvents.length == 0) {return <h2>No Liked Events</h2>}
@@ -107,9 +127,12 @@ export const LikedItems = () => {
             <section className="event" key={`event--${event.id}`}>
               <div className="eventDetails">
                 <div className="float-container">
-                  <p className="eventType child">{event.event.eventTypeId}</p>
+                  {/* <p className="eventType child">{event.event.eventTypeId}</p> */}
                 </div>
                 <h3 className="eventName">{event.event.eventName}</h3>
+                <div className="buttons child">
+                  {<>{deleteButton(event.id)}</>}
+                </div>
                 <p className="eventDateTime">
                   {formatEventDateTime(event.event.dateTime)}
                 </p>
