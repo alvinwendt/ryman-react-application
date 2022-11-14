@@ -103,6 +103,12 @@
       "userId": 4,
       "eventId": 3,
       "id": 11
+    },
+    {
+      "comment": "I can't wait for this show!",
+      "userId": 3,
+      "eventId": 3,
+      "id": 12
     }
   ],
   "events": [

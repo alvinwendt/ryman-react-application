@@ -1,44 +1,40 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import "../events/Events.css"
 
 export const CommentEdit = () => {
-    const [editedComment, updateComment] = useState({
+
+
+    const [comment, updateComment] = useState({
         comment: "",
-        emergency: false
+        userId: 0,
+        eventId: 0
+
     })
+
     const { commentId } = useParams()
     const navigate = useNavigate()
-
-    useEffect(() => {
-        fetch(`http://localhost:8080/comments/${commentId}`)
-            .then(response => response.json())
-            .then((data) => {
-                assignTicket(data)
-            })
-    }, [ticketId])
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        return fetch(`http://localhost:8080/serviceTickets/${ticket.id}`, {
+        return fetch(`http://localhost:8088/comments?id=${commentId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(ticket)
+            body: JSON.stringify(comment)
         })
             .then(response => response.json())
             .then(() => {
-                navigate("/tickets")
+                navigate("/comments/:commentId`")
             })
     }
 
-
-    return <form className="ticketForm">
-        <h2 className="ticketForm__title">Service Ticket</h2>
+    return <form className="editCommentForm">
+        <h2 className="editCommentForm__title">Edit Comment</h2>
         <fieldset>
-            <div className="form-group">
-                <label htmlFor="description">Description:</label>
+            <div className="edit-form-group">
                 <textarea
                     required autoFocus
                     type="text"
@@ -46,34 +42,22 @@ export const CommentEdit = () => {
                         height: "10rem"
                     }}
                     className="form-control"
-                    value={ticket.description}
+                    placeholder="What I meant to say was..."
+                    value={comment.comment}
                     onChange={
                         (evt) => {
-                            const copy = { ...ticket }
-                            copy.description = evt.target.value
-                            assignTicket(copy)
+                            const copy = { ...comment }
+                            copy.comment = evt.target.value
+                            updateComment(copy)
                         }
-                    }>{ticket.description}</textarea>
+                    }>{comment.comment}</textarea>
             </div>
         </fieldset>
-        <fieldset>
-            <div className="form-group">
-                <label htmlFor="name">Emergency:</label>
-                <input type="checkbox"
-                    checked={ticket.emergency}
-                    onChange={
-                        (evt) => {
-                            const copy = { ...ticket }
-                            copy.emergency = evt.target.checked
-                            assignTicket(copy)
-                        }
-                    } />
-            </div>
-        </fieldset>
+
         <button
             onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-            className="btn btn-primary">
-            Save Edits
+            className="btn btn-secondary">
+            Save Edit
         </button>
     </form>
 }
