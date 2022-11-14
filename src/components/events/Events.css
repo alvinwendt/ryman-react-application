@@ -8,6 +8,15 @@
     margin: 20px;
 }
 
+.detailedEvent {
+    background: whitesmoke;
+    border-radius: 5px;
+    margin: 100px auto 50px;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+}
+
 .events {
     display: flex;
     flex-direction: column;
@@ -81,10 +90,14 @@ img {
 
 .commentsSection {
     background: rgb(192, 191, 191);
-    margin: 0 10px;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+
 }
 
-.commentTitle {
+.commentsTitle {
     font-family: 'League Gothic', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -96,7 +109,6 @@ img {
 
 .comment {
     background:whitesmoke;
-    border: solid black 2px;
     padding: 5px;
     margin: 0 20px 10px 20px;
 }
@@ -107,7 +119,7 @@ img {
     font-weight: 400;
     text-transform: uppercase;
     padding: 0;
-    margin: 10px;
+    margin: 10px 0 0 10px;
     line-height: 110%;
 }
 
@@ -120,10 +132,7 @@ img {
     line-height: 110%;
 }
 
-.commentInput {
-    max-width: 50%;
-    max-height: 266px;
-    padding: 5px;
+.form-control {
     margin: 0 20px;
 }
 
@@ -138,3 +147,26 @@ img {
     opacity: 0.6;
     transition: 0.3s;
 }
+
+.btn-primary:hover{opacity:1}
+
+/* CSS FOR BONUS: COMMENT EDITING */
+/* .editCommentForm__title {
+    color: white;
+    margin: 0 20px;
+}
+
+.editCommentForm {
+    margin: 120px auto;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    margin: 0 0 10px 20px;
+    background-color: rgb(206, 35, 35);
+    color: white;
+    letter-spacing: .07em;
+    text-decoration: none;
+    border: none;
+    transition: 0.3s;
+} */
