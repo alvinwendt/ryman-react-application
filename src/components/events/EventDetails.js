@@ -37,11 +37,13 @@ export const EventDetails = () => {
 
     const rymanUser = localStorage.getItem("ryman_user")
     const rymanUserObject = JSON.parse(rymanUser)
+
+    const eventIdObject = JSON.parse(eventId)
     
     const [newComment, setNewComment] = useState({
       comment: "",
       userId: rymanUserObject.id,
-      eventId: eventId
+      eventId: eventIdObject
     })
 
   const handleSaveButtonClick = (event) => {
@@ -71,8 +73,6 @@ export const EventDetails = () => {
           fetchComments()
         }
         sendData()
-
-        // navigate(`/events/${commentToSendToAPI.eventId}`)
   }
 
   const formatEventDateTime = (eventDateTime) => {
@@ -83,8 +83,7 @@ export const EventDetails = () => {
   }
 
     return <> 
-
-        <section className="event">
+        <section className="detailedEvent">
           {
             event.map(
               (event) => {
@@ -102,7 +101,7 @@ export const EventDetails = () => {
         </section>
 
         <section className="commentsSection">
-          <h2 className="commentTitle">Comments</h2>
+          <h2 className="commentsTitle">Comments</h2>
           <article className="comments">
             {
               eventComments.map(
@@ -110,6 +109,7 @@ export const EventDetails = () => {
                   return <section className="comment" key={`comment--${comment.id}`}>
                     <section className="userComment">{comment.comment}</section>
                     <section className="userName">--{comment.user.fullName}--</section>
+                    {/* <Link to={`/comments/${comment.id}/edit`} className="editComment"><button className="editCommentButton">EDIT COMMENT</button></Link> */}
                   </section>
                 }
               )
