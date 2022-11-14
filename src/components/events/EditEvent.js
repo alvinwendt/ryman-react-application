@@ -1,57 +1,65 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './EventsForm.css';
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import '../EventsForm.css';
 
-export const EventsForm = () => {
-  const [rymanEvent, update] = useState({
-    eventName: '',
-    dateTime: '',
-    price: 0.0,
-    eventType: 0,
-    imageURL: '',
-  });
+export const EditEvent = () => {
 
-  const [eventTypes, setEventTypes] = useState([]);
+    const {eventId} = useParams()
+    const [rymanEvent, update] = useState({
+        eventName: '',
+        dateTime: '',
+        price: 0.0,
+        eventTypeId: 0,
+        imageURL: ''
+    })
+    const [eventTypes, setEventTypes] = useState([]);
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
+    useEffect(
+        () => {
+            const fetchEvent = async () => {
+                const response = await fetch(`http://localhost:8088/events?id=${eventId}`)
+                const event = await response.json()
+                update(event[0])
+              }
+              fetchEvent()
+        },
+        [eventId]
+    )
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`http://localhost:8088/EventTypes`);
-      const eventTypeArray = await response.json();
-      setEventTypes(eventTypeArray);
-    };
-    fetchData();
-  }, []);
-
-  //console.log(eventTypes);
+    useEffect(() => {
+      const fetchData = async () => {
+        const response = await fetch(`http://localhost:8088/EventTypes`);
+        const eventTypeArray = await response.json();
+        setEventTypes(eventTypeArray);
+      };
+      fetchData();
+    }, []);
 
   const handleSaveButtonClick = (event) => {
     event.preventDefault();
 
-    const dataToSendToAPI = {
-      eventName: rymanEvent.eventName,
-      dateTime: rymanEvent.dateTime,
-      price: rymanEvent.price,
-      eventTypeId: rymanEvent.eventType,
-      imageURL: rymanEvent.imageURL,
-    };
+    console.log(`rymanEvent:`,rymanEvent)
 
-    return fetch(`http://localhost:8088/events`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataToSendToAPI),
-    })
-      .then((response) => response.json())
-      .then(() => {
-        navigate('/');
-      });
-  };
+    const saveEvent = async () => {
+      const options = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(rymanEvent)
+    }
+    const response = await fetch (`http://localhost:8088/events/${eventId}`, options)
+    await response.json()
+    navigate('/')
+    }
+    saveEvent()
+  }
+    
   return (
     <form className="eventsForm">
-      <h2 className="eventsForm__title">Create New Event</h2>
+      <h2 className="eventsForm__title">Edit Event</h2>
       <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="eventsName">Event Name:</label>
@@ -91,43 +99,6 @@ export const EventsForm = () => {
         </div>
       </fieldset>
 
-      {/* <fieldset>
-        <div className="form-group">
-          <label htmlFor="type">Date:</label>
-          <input
-            type="date"
-            required
-            autoFocus
-            className="form-control"
-            value={rymanEvent.date}
-            onChange={(event) => {
-              const copy = { ...rymanEvent };
-              copy.date = event.target.value;
-              update(copy);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="time">Time:</label>
-          <input
-            type="time"
-            required
-            autoFocus
-            //type="text"
-            className="form-control"
-            //placeholder="Time"
-            value={rymanEvent.time}
-            onChange={(event) => {
-              const copy = { ...rymanEvent };
-              copy.time = event.target.value;
-              update(copy);
-            }}
-          />
-        </div>
-      </fieldset> */}
-
       <fieldset className="eventField">
         <div className="form-group">
           <label htmlFor="price">Price:</label>
@@ -153,14 +124,13 @@ export const EventsForm = () => {
           <label htmlFor="type">Event Type:</label>
           <select
             className="form-control"
-            defaultValue={rymanEvent.eventType}
+            value={rymanEvent.eventTypeId}
             onChange={(event) => {
               const copy = { ...rymanEvent };
-              copy.eventType = parseInt(event.target.value);
+              copy.eventTypeId = parseInt(event.target.value);
               update(copy);
             }}
           >
-            <option value="" disabled selected>-- Choose --</option>
             {eventTypes.map((type) => {
               return (
                 <option className="eventType" key={type.id} value={type.id}>
@@ -171,6 +141,9 @@ export const EventsForm = () => {
           </select>
         </div>
       </fieldset>
+
+
+    
 
       <fieldset className="eventField">
         <div className="form-group">
@@ -193,7 +166,7 @@ export const EventsForm = () => {
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
         className="btn btn-primary"
       >
-        Submit Event
+        Save Event
       </button>
     </form>
   );

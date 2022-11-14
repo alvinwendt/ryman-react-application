@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
-
+import { useParams } from "react-router-dom"
 import "./Events.css"
+import { formatInTimeZone } from "date-fns-tz"
 
 export const EventDetails = () => {
     const {eventId} = useParams()
     const [eventComments, setEventComments] = useState([])
     const [event, setEvent] = useState([])
+
+
 
     const fetchComments = async () => {
       const response = await fetch(`http://localhost:8088/comments?eventId=${eventId}&_expand=user`)
@@ -71,6 +73,18 @@ export const EventDetails = () => {
           fetchComments()
         }
         sendData()
+        setNewComment({
+          comment: "",
+          userId: rymanUserObject.id,
+          eventId: eventIdObject
+        })
+  }
+
+  const formatEventDateTime = (eventDateTime) => {
+
+    const convertDateTime = new Date(eventDateTime)
+
+    return formatInTimeZone(convertDateTime, 'America/Chicago', "LLLL d, yyyy 'at' h:mm a zzz")
   }
 
     return <> 
@@ -80,11 +94,11 @@ export const EventDetails = () => {
               (event) => {
               return (
                 <article key={`event--${event.id}`}>
-                  <p className="eventType">{event.eventType.name}</p>
+                  <p className="eventTypeDetail">{event.eventType.name}</p>
                   <h3 className="eventName">{event.eventName}</h3>
-                  <img className="eventImg" src={event.imageURL}></img>
-                    <div className="eventDateAndTime">{event.dateTime}</div>
-                    <div className="eventPrice">Ticket Price: ${parseFloat(event.price, 2)}</div>
+                  <img src={event.imageURL}></img>
+                    <div className="eventDateTimeDetail">{formatEventDateTime(event.dateTime)}</div>
+                    <div className="eventDateTimeDetail">Ticket Price: ${event.price}</div>
                 </article>
               )
             })
@@ -110,11 +124,11 @@ export const EventDetails = () => {
           <form className="commentForm">
                 <fieldset>
                     <div className="form-group">
-                        <label className= "newCommentsHeading" htmlFor="description">Add New Comment</label>
+                        <label className= "newCommentsHeading" htmlFor="description">Add New Comment: </label>
                         <input
                             required autoFocus
                             type="text"
-                            className="form-control"
+                            className="commentInput"
                             placeholder="Add your comment here!"
                             value={newComment.comment}
                             onChange={
@@ -127,7 +141,7 @@ export const EventDetails = () => {
                     </div>
                 </fieldset>
 
-                <button 
+                <button
                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                     className="btn btn-primary">
                     Save New Comment

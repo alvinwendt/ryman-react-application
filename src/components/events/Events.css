@@ -1,7 +1,6 @@
 .eventsContainer {
     display: flex;
     justify-content: center;
-    margin-top: 120px;
 }
 
 .event {
@@ -11,7 +10,7 @@
 .detailedEvent {
     background: whitesmoke;
     border-radius: 5px;
-    margin: 100px auto 50px;
+    margin: 20px auto 50px;
     padding: 10px;
     width: 50%;
     text-align: center;
@@ -81,11 +80,29 @@ img {
     padding: 0;
     margin: 0 0 7px 0;
     line-height: 110%;
+    width: 80px;
+}
+
+.eventTypeDetail {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    padding: 0;
+    margin: 0 0 7px 0;
+    line-height: 110%;
 }
 
 .eventDateTime {
-    font-size: 11px;
+    font-size: 15px;
     margin-bottom: 30px;
+    font-family: 'Mukta Vaani', sans-serif;
+}
+
+.eventDateTimeDetail {
+    font-size: 20px;
+    font-family: 'Mukta Vaani', sans-serif;
 }
 
 .commentsSection {
@@ -132,10 +149,6 @@ img {
     line-height: 110%;
 }
 
-.form-control {
-    margin: 0 20px;
-}
-
 .btn-primary {
     padding: 10px 20px;
     margin: 0 0 10px 20px;
@@ -150,23 +163,30 @@ img {
 
 .btn-primary:hover{opacity:1}
 
-/* CSS FOR BONUS: COMMENT EDITING */
-/* .editCommentForm__title {
-    color: white;
-    margin: 0 20px;
-}
-
-.editCommentForm {
-    margin: 120px auto;
-}
-
-.btn-secondary {
-    padding: 10px 20px;
-    margin: 0 0 10px 20px;
-    background-color: rgb(206, 35, 35);
-    color: white;
-    letter-spacing: .07em;
+.blackIcon {
     text-decoration: none;
-    border: none;
-    transition: 0.3s;
-} */
+    color: black;
+    /* padding: 5px; */
+}
+
+.buttons {
+   width: 50px;
+   margin-left: 130px;
+}
+
+.editEventButton {
+    /* margin-left: 70px;
+    padding-right: 10px; */
+}
+
+.child {
+    /* width: 50%;
+    float: left;
+    padding: 20px; */
+}
+
+.float-container {
+    display: flex;
+}
+
+
