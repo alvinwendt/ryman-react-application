@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "./Events.css"
+import { formatInTimeZone } from "date-fns-tz"
 
 export const EventDetails = () => {
     const {eventId} = useParams()
     const [eventComments, setEventComments] = useState([])
     const [event, setEvent] = useState([])
+
+
 
     const fetchComments = async () => {
       const response = await fetch(`http://localhost:8088/comments?eventId=${eventId}&_expand=user`)
@@ -72,6 +75,13 @@ export const EventDetails = () => {
         // navigate(`/events/${commentToSendToAPI.eventId}`)
   }
 
+  const formatEventDateTime = (eventDateTime) => {
+
+    const convertDateTime = new Date(eventDateTime)
+
+    return formatInTimeZone(convertDateTime, 'America/Chicago', "LLLL d, yyyy 'at' h:mm a zzz")
+  }
+
     return <> 
 
         <section className="event">
@@ -83,7 +93,7 @@ export const EventDetails = () => {
                   <p className="eventType">{event.eventType.name}</p>
                   <h3 className="eventName">{event.eventName}</h3>
                   <img src={event.imageURL}></img>
-                    <div className="eventDateAndTime">{event.date} at {event.time}</div>
+                    <div className="eventDateAndTime">{formatEventDateTime(event.dateTime)}</div>
                     <div className="eventPrice">Ticket Price: ${event.price}</div>
                 </article>
               )
@@ -92,7 +102,7 @@ export const EventDetails = () => {
         </section>
 
         <section className="commentsSection">
-          <h2>Comments</h2>
+          <h2 className="commentTitle">Comments</h2>
           <article className="comments">
             {
               eventComments.map(
@@ -113,7 +123,7 @@ export const EventDetails = () => {
                         <input
                             required autoFocus
                             type="text"
-                            className="form-control"
+                            className="commentInput"
                             placeholder="Add your comment here!"
                             value={newComment.comment}
                             onChange={

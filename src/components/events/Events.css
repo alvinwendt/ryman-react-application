@@ -72,6 +72,7 @@ img {
     padding: 0;
     margin: 0 0 7px 0;
     line-height: 110%;
+    width: 80px;
 }
 
 .eventDateTime {
@@ -138,3 +139,31 @@ img {
     opacity: 0.6;
     transition: 0.3s;
 }
+
+.blackIcon {
+    text-decoration: none;
+    color: black;
+    /* padding: 5px; */
+}
+
+.buttons {
+   width: 50px;
+   margin-left: 130px;
+}
+
+.editEventButton {
+    /* margin-left: 70px;
+    padding-right: 10px; */
+}
+
+.child {
+    /* width: 50%;
+    float: left;
+    padding: 20px; */
+}
+
+.float-container {
+    display: flex;
+}
+
+
