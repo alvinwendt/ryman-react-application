@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
+import '../EventsForm.css';
 
 export const EditEvent = () => {
 
@@ -163,7 +164,7 @@ export const EditEvent = () => {
 
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="submitEvent"
+        className="btn btn-primary"
       >
         Save Event
       </button>

@@ -73,6 +73,11 @@ export const EventDetails = () => {
           fetchComments()
         }
         sendData()
+        setNewComment({
+          comment: "",
+          userId: rymanUserObject.id,
+          eventId: eventIdObject
+        })
   }
 
   const formatEventDateTime = (eventDateTime) => {
@@ -89,11 +94,11 @@ export const EventDetails = () => {
               (event) => {
               return (
                 <article key={`event--${event.id}`}>
-                  <p className="eventType">{event.eventType.name}</p>
+                  <p className="eventTypeDetail">{event.eventType.name}</p>
                   <h3 className="eventName">{event.eventName}</h3>
                   <img src={event.imageURL}></img>
-                    <div className="eventDateAndTime">{formatEventDateTime(event.dateTime)}</div>
-                    <div className="eventPrice">Ticket Price: ${event.price}</div>
+                    <div className="eventDateTimeDetail">{formatEventDateTime(event.dateTime)}</div>
+                    <div className="eventDateTimeDetail">Ticket Price: ${event.price}</div>
                 </article>
               )
             })
@@ -119,7 +124,7 @@ export const EventDetails = () => {
           <form className="commentForm">
                 <fieldset>
                     <div className="form-group">
-                        <label className= "newCommentsHeading" htmlFor="description">Add New Comment</label>
+                        <label className= "newCommentsHeading" htmlFor="description">Add New Comment: </label>
                         <input
                             required autoFocus
                             type="text"
@@ -136,7 +141,7 @@ export const EventDetails = () => {
                     </div>
                 </fieldset>
 
-                <button 
+                <button
                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                     className="btn btn-primary">
                     Save New Comment

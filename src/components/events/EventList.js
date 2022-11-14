@@ -11,7 +11,7 @@ export const EventList = () => {
 
   const fetchEvents = async () => {
       const response = await fetch(
-        "http://localhost:8088/events/?_expand=eventType"
+        "http://localhost:8088/events/?_expand=eventType&_sort=dateTime"
       );
       const eventArray = await response.json();
       setEvents(eventArray);

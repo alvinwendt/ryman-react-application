@@ -8,9 +8,8 @@
   margin: 50px auto;
   border: 1px solid #0075a1;
   border-radius: 2%;
-  padding: 50px 20px;
+  padding: 20px 20px;
   box-shadow: var(--card-shadow);
-  margin-top: 120px;
 }
 
 .eventField {
@@ -33,3 +32,17 @@
   margin: 10px;
   box-shadow: var(--card-shadow);
 }
+
+.btn-primary {
+  padding: 10px 20px;
+  margin: 0 0 10px 20px;
+  background-color: black;
+  color: white;
+  letter-spacing: .07em;
+  text-decoration: none;
+  border: none;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.btn-primary:hover{opacity:1}

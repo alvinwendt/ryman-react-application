@@ -191,7 +191,7 @@ export const EventsForm = () => {
 
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="submitEvent"
+        className="btn btn-primary"
       >
         Submit Event
       </button>
