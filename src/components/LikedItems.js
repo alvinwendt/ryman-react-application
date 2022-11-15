@@ -128,11 +128,12 @@ export const LikedItems = () => {
               <div className="eventDetails">
                 <div className="float-container">
                   {/* <p className="eventType child">{event.event.eventTypeId}</p> */}
-                </div>
-                <h3 className="eventName">{event.event.eventName}</h3>
-                <div className="buttons child">
+                  <h3 className="likedEventName">{event.event.eventName}</h3>
+                  <div className="buttons child">
                   {<>{deleteButton(event.id)}</>}
                 </div>
+                </div>
+                
                 <p className="eventDateTime">
                   {formatEventDateTime(event.event.dateTime)}
                 </p>
